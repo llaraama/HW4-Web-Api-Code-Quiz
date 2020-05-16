@@ -1,18 +1,21 @@
 
-var trig = setInterval(timer,1000);
 
-var counter=0;
-var min=0;
-var sec=60;
-
-function timer(){
-
-sec=--sec;
-
-
- document.getElementById("output").innerHTML = min+" : "+sec;
-
- }
+(function() {
+    var sec = 60;
+    function startTimer(){
+        console.log('timer suppose to go')
+        var timer = setInterval(function(){
+            sec--;
+            document.getElementById('timerDisplay').innerHTML='00:'+sec;
+            if (sec < 0) {
+                clearInterval(timer);
+                alert("Time is up!")
+            }
+        }, 1000);
+    }
+        document.getElementById('timerDisplay').innerHTML='00:'+sec;
+    startTimer();
+})();
 
 
 
@@ -33,12 +36,17 @@ Quiz.prototype.guess = function(answer) {
         this.score++;
         var resultsCorrect=document.createElement("h5");
         resultsCorrect.textContent="Correct!";
-        document.body.appendChild(resultsCorrect);
+        document.body.appendChild(resultsCorrect)
+        
+        
         
     }else if (this.getQuestionIndex().isNotCorrectAnswer(answer)){
         var resultsIncorrect=document.createElement("h5");
         resultsIncorrect.textContent="Incorrect!";
         document.body.appendChild(resultsIncorrect);
+        
+        
+        
     }
  
     this.questionIndex++;
@@ -106,9 +114,14 @@ function showScores() {
     var gameOverHTML = "<h1>All Done!</h1>";
     gameOverHTML += "<h4 id='score'> Your final score: " + quiz.score + "</h4>";
     gameOverHTML +="<form>Enter Initals:<label class='sr-only'for='inlineFormInputInitalse'>Initals</label><input type='text' class='form-control' id='inlineFormInputInitals' placeholder='LL'></form>"
-    gameOverHTML +="<form method='get' action=highscores-page.html><button type ='sumbit'> submit</button></form>"
+    gameOverHTML +="<form method='get' action='highscores-page.html'><button type ='sumbit'> submit</button></form>"
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
+    
+   
+
+
+
 };
 
 
@@ -116,11 +129,11 @@ function showScores() {
 
 // create questions here
 var questions = [
-    new Question("Hyper Text Markup Language Stand For?", ["JavaScript", "XHTML","CSS", "HTML"], "HTML"),
-    new Question("Which language is used for styling web pages?", ["HTML", "JQuery", "CSS", "XML"], "CSS"),
+    new Question("which of the following function of string object  returns the calling string value converted to lower case while respecting the current locale ?", ["toLocaleLowerCase()", "toLowerCase()","toString()", "substring()"], "toLocaleLowerCase()"),
+    new Question("Which of the following function of Array object removes the last element from an array and returns that element?", ["pop()", "push()", "join()", "map()"], "pop()"),
     new Question("Which is not a JavaScript Framework?", ["Python Script", "JQuery","Django", "NodeJS"], "Django"),
-    new Question("Which is used for Connect To Database?", ["PHP", "HTML", "JS", "All"], "PHP"),
-    new Question("Webdevtrick.com is about..", ["Web Design", "Graphic Design", "SEO & Development", "All"], "All")
+    new Question("What are variables used for in JavaScript Programs?", ["storing numbers, dates, or other values", "varying randomly", "causing high-school algebra flashbacks", "none of the above"], "storing numbers, dates, or other values"),
+    new Question("The _______ method of an Array object adds and/or removes elements from an array.", ["reverse", "shift", "slice", "splice"], "splice")
 
 ];
 
