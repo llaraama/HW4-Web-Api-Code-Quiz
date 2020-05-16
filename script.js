@@ -106,7 +106,7 @@ function showScores() {
     var gameOverHTML = "<h1>All Done!</h1>";
     gameOverHTML += "<h4 id='score'> Your final score: " + quiz.score + "</h4>";
     gameOverHTML +="<form>Enter Initals:<label class='sr-only'for='inlineFormInputInitalse'>Initals</label><input type='text' class='form-control' id='inlineFormInputInitals' placeholder='LL'></form>"
-    gameOverHTML +="<form method='get' action=file:///C:/Users/laura/first_day_stuff/HW4-Web-Api-Code-Quiz/highscores-page.html><button type ='sumbit'> submit</button></form>"
+    gameOverHTML +="<form method='get' action=highscores-page.html><button type ='sumbit'> submit</button></form>"
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
 };
