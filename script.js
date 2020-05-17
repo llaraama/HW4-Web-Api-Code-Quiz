@@ -1,7 +1,7 @@
 
 
 (function() {
-    var sec = 60;
+    var sec = 20;
     function startTimer(){
         console.log('timer suppose to go')
         var timer = setInterval(function(){
@@ -10,6 +10,7 @@
             if (sec < 0) {
                 clearInterval(timer);
                 alert("Time is up!")
+                showScores();
             }
         }, 1000);
     }
@@ -34,17 +35,15 @@ Quiz.prototype.getQuestionIndex = function() {
 Quiz.prototype.guess = function(answer) {
     if(this.getQuestionIndex().isCorrectAnswer(answer)) {
         this.score++;
-        var resultsCorrect=document.createElement("h5");
-        resultsCorrect.textContent="Correct!";
-        document.body.appendChild(resultsCorrect)
+        alert("Correct!");
+        
+       
+
         
         
         
     }else if (this.getQuestionIndex().isNotCorrectAnswer(answer)){
-        var resultsIncorrect=document.createElement("h5");
-        resultsIncorrect.textContent="Incorrect!";
-        document.body.appendChild(resultsIncorrect);
-        
+        alert("Incorrect!");
         
         
     }
@@ -113,21 +112,16 @@ function showProgress() {
 function showScores() {
     var gameOverHTML = "<h1>All Done!</h1>";
     gameOverHTML += "<h4 id='score'> Your final score: " + quiz.score + "</h4>";
-    gameOverHTML +="<form>Enter Initals:<label class='sr-only'for='inlineFormInputInitalse'>Initals</label><input type='text' class='form-control' id='inlineFormInputInitals' placeholder='LL'></form>"
-    gameOverHTML +="<form method='get' action='highscores-page.html'><button type ='sumbit'> submit</button></form>"
+    gameOverHTML +="<form method 'get' action='highscores-page.html'><input placeholder='initials' id='initials'/><button id='sumbit'> submit</button></form>"
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
-    
-   
-
-
 
 };
 
 
 
 
-// create questions here
+// questions 
 var questions = [
     new Question("which of the following function of string object  returns the calling string value converted to lower case while respecting the current locale ?", ["toLocaleLowerCase()", "toLowerCase()","toString()", "substring()"], "toLocaleLowerCase()"),
     new Question("Which of the following function of Array object removes the last element from an array and returns that element?", ["pop()", "push()", "join()", "map()"], "pop()"),
@@ -137,7 +131,7 @@ var questions = [
 
 ];
 
-// create quiz
+//  quiz
 var quiz = new Quiz(questions);
  
 // display quiz
