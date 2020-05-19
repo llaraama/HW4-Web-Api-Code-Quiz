@@ -1,13 +1,12 @@
-
-
+var sec = 15;
 (function() {
-    var sec = 20;
+    
     function startTimer(){
         console.log('timer suppose to go')
         var timer = setInterval(function(){
             sec--;
             document.getElementById('timerDisplay').innerHTML='00:'+sec;
-            if (sec < 0) {
+            if (sec <= 0) {
                 clearInterval(timer);
                 alert("Time is up!")
                 showScores();
@@ -24,6 +23,7 @@ function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
     this.questionIndex = 0;
+ 
 
 
 }
@@ -37,13 +37,16 @@ Quiz.prototype.guess = function(answer) {
         this.score++;
         alert("Correct!");
         
-       
+        
+      
 
         
         
         
     }else if (this.getQuestionIndex().isNotCorrectAnswer(answer)){
         alert("Incorrect!");
+        sec -=5
+     
         
         
     }
