@@ -1,6 +1,20 @@
 # HW4-Web-Api-Code-Quiz
 Web APIs: Code Quiz
 
+ ## Table of Contents:
+  * [Description](#Description)
+ 
+  * [User Story](#User-Story)
+  
+  * [Installation](#Installation)
+
+  * [Usage](#Usage)
+
+  * [License](#License)
+
+  * [Contributing](#Contributing)
+
+  * [Technology](#Technology)
 
 ## Description
 A timed code quiz with multiple-choice questions. This app runs in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
