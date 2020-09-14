@@ -31,6 +31,9 @@ SO THAT I can gauge my progress compared to my peers
 Clone this repo to your local machine using: https://github.com/llaraama/Web-Api-Code-Quiz.git
 
 ## Usage
+![Capturenew1](https://user-images.githubusercontent.com/62354759/93123830-b3c85780-f696-11ea-9031-471fcc41730d.JPG)
+![Capturenew2](https://user-images.githubusercontent.com/62354759/93123882-c478cd80-f696-11ea-8c9b-eecd34297500.JPG)
+
 The following animation demonstrates the application functionality:
 
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
